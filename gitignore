@@ -1,0 +1,29 @@
+
+---
+
+## ✅ 2. `.gitignore` — исключение временных файлов
+
+```txt
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.cache/
+*.log
+.env
+*.sqlite3
+
+# Streamlit
+.streamlit/
+
+# VSCode
+.vscode/
+
+# MacOS
+.DS_Store
