@@ -1,4 +1,4 @@
-# --- Основные ---
+# Core
 streamlit==1.29.0
 numpy==1.26.4
 pandas==2.2.2
@@ -7,25 +7,20 @@ scikit-learn==1.5.2
 scipy==1.13.1
 sympy==1.13.1
 
-# --- Байесовские модели и ML ---
-tensorflow==2.13.0
+# Bayesian / statistics / ML
 pymc==5.15.1
 statsmodels==0.14.2
+tensorflow==2.13.0
 
-# --- Веб и деплой ---
+# Web / optional API
 fastapi==0.115.5
 uvicorn==0.32.0
 gunicorn==23.0.0
 
-# --- Безопасность и конфигурация ---
+# Utils
 cryptography==42.0.5
 python-decouple==3.8
 
-# --- Отладка и тестирование ---
-pytest==8.3.3
-pytest-cov==5.0.0
-ipython==8.28.0
-
-# --- Служебные ---
+# Build helpers
 setuptools>=68.0.0
 wheel>=0.41.0
