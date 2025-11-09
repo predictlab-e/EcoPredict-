@@ -21,7 +21,8 @@ import math
 from typing import Dict, Any, List, Optional
 
 # Импорт API верхнего уровня
-from Single import run_pipeline
+from single import run_pipeline
+
 
 # --------------------------------------------------------------------------------------
 # Конфигурация и состояние приложения
