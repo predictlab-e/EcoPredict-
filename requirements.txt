@@ -10,7 +10,8 @@ sympy==1.13.1
 # Bayesian / statistics / ML
 pymc==5.15.1
 statsmodels==0.14.2
-tensorflow==2.13.0
+tensorflow==2.15.0
+tensorflow-io-gcs-filesystem==0.37.1
 
 # Web / optional API
 fastapi==0.115.5
@@ -18,8 +19,8 @@ uvicorn==0.32.0
 gunicorn==23.0.0
 
 # Utils
-cryptography==42.0.5
 python-decouple==3.8
+orjson==3.9.10
 
 # Build helpers
 setuptools>=68.0.0
