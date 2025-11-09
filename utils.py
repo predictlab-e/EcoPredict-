@@ -217,4 +217,7 @@ def stable_softmax(x: List[float], temp: float = 1.0) -> List[float]:
     s = sum(exps)
     return [ei / s for ei in exps]
 
-def safe_div(a: float, b: float
+def safe_div(a: float, b: float) -> float:
+    if b == 0:
+        return 0.0
+    return a / b
