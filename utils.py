@@ -211,9 +211,6 @@ def bounded(x: float, lo: float, hi: float) -> float:
 
 def normalize_01(x: float, min_val: float = 0.0, max_val: float = 1.0) -> float:
     return bounded((x - min_val) / (max_val - min_val + 1e-9), 0.0, 1.0)
-    
-def normalize_01(x: float, min_val: float = 0.0, max_val: float = 1.0) -> float:
-    return bounded((x - min_val) / (max_val - min_val + 1e-9), 0.0, 1.0)
 
 def stable_softmax(x: List[float], temp: float = 1.0) -> List[float]:
     if not x:
@@ -227,3 +224,26 @@ def safe_div(a: float, b: float) -> float:
     if b == 0:
         return 0.0
     return a / b
+
+def exp_weight(xs: List[float], alpha: float = 0.9) -> List[float]:
+    """Экспоненциальное сглаживание списка xs."""
+    if not xs:
+        return []
+    result = [xs[0]]
+    for i in range(1, len(xs)):
+        result.append(alpha * xs[i] + (1 - alpha) * result[-1])
+    return result
+
+def pct_change(xs: List[float]) -> List[float]:
+    """Процентное изменение последовательности xs."""
+    if len(xs) < 2:
+        return []
+    return [(xs[i] - xs[i-1]) / (xs[i-1] + 1e-9) for i in range(1, len(xs))]
+
+def serialize_df_like(df: Any) -> bytes:
+    """Сериализация DataFrame-подобного объекта в байты."""
+    return pickle.dumps(df)
+
+def deserialize_df_like(data: bytes) -> Any:
+    """Десериализация DataFrame-подобного объекта из байтов."""
+    return pickle.loads(data)
