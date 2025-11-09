@@ -205,7 +205,13 @@ def winsorize(x: List[float], limits: Tuple[float, float] = (0.01, 0.99)) -> Lis
 # --------------------------------------------------------------------------------------
 # Нормализация и математика
 # --------------------------------------------------------------------------------------
+def bounded(x: float, lo: float, hi: float) -> float:
+    """Ограничивает значение x в пределах [lo, hi]."""
+    return max(lo, min(x, hi))
 
+def normalize_01(x: float, min_val: float = 0.0, max_val: float = 1.0) -> float:
+    return bounded((x - min_val) / (max_val - min_val + 1e-9), 0.0, 1.0)
+    
 def normalize_01(x: float, min_val: float = 0.0, max_val: float = 1.0) -> float:
     return bounded((x - min_val) / (max_val - min_val + 1e-9), 0.0, 1.0)
 
